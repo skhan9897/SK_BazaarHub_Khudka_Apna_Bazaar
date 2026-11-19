@@ -7,10 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
-import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.kafka.core.*;
-
 import org.springframework.kafka.listener.DeadLetterPublishingRecoverer;
 import org.springframework.kafka.listener.DefaultErrorHandler;
 import org.springframework.kafka.support.serializer.JsonSerializer;
@@ -44,37 +42,41 @@ public class KafkaConfig {
 
     @Bean
     public DefaultErrorHandler errorHandler(KafkaTemplate<String, Object> template) {
-        // Retry 3 times with a 1-second interval, then send to DLT (.DLT suffix)
         return new DefaultErrorHandler(
                 new DeadLetterPublishingRecoverer(template),
                 new FixedBackOff(1000L, 3L)
         );
     }
 
-    // TOPIC DEFINITIONS
+    // 15 KAFKA BUSINESS TOPICS
     @Bean
-    public NewTopic customerRegisteredTopic() {
-        return TopicBuilder.name("customer.registered").partitions(3).replicas(1).build();
+    public NewTopic userRegisteredTopic() {
+        return TopicBuilder.name("user.registered").partitions(3).replicas(1).build();
+    }
+
+    @Bean
+    public NewTopic userEmailOtpRequestedTopic() {
+        return TopicBuilder.name("user.email.otp.requested").partitions(3).replicas(1).build();
+    }
+
+    @Bean
+    public NewTopic userEmailOtpVerifiedTopic() {
+        return TopicBuilder.name("user.email.otp.verified").partitions(3).replicas(1).build();
+    }
+
+    @Bean
+    public NewTopic userMobileOtpRequestedTopic() {
+        return TopicBuilder.name("user.mobile.otp.requested").partitions(3).replicas(1).build();
+    }
+
+    @Bean
+    public NewTopic userMobileOtpVerifiedTopic() {
+        return TopicBuilder.name("user.mobile.otp.verified").partitions(3).replicas(1).build();
     }
 
     @Bean
     public NewTopic sellerRegisteredTopic() {
         return TopicBuilder.name("seller.registered").partitions(3).replicas(1).build();
-    }
-
-    @Bean
-    public NewTopic sellerKycApprovedTopic() {
-        return TopicBuilder.name("seller.kyc.approved").partitions(3).replicas(1).build();
-    }
-
-    @Bean
-    public NewTopic productCreatedTopic() {
-        return TopicBuilder.name("product.created").partitions(3).replicas(1).build();
-    }
-
-    @Bean
-    public NewTopic inventoryUpdatedTopic() {
-        return TopicBuilder.name("inventory.updated").partitions(3).replicas(1).build();
     }
 
     @Bean
@@ -93,12 +95,32 @@ public class KafkaConfig {
     }
 
     @Bean
-    public NewTopic paymentSuccessTopic() {
-        return TopicBuilder.name("payment.success").partitions(3).replicas(1).build();
+    public NewTopic paymentInitiatedTopic() {
+        return TopicBuilder.name("payment.initiated").partitions(3).replicas(1).build();
+    }
+
+    @Bean
+    public NewTopic paymentSuccessfulTopic() {
+        return TopicBuilder.name("payment.successful").partitions(3).replicas(1).build();
+    }
+
+    @Bean
+    public NewTopic paymentFailedTopic() {
+        return TopicBuilder.name("payment.failed").partitions(3).replicas(1).build();
+    }
+
+    @Bean
+    public NewTopic inventoryUpdatedTopic() {
+        return TopicBuilder.name("inventory.updated").partitions(3).replicas(1).build();
     }
 
     @Bean
     public NewTopic notificationRequestedTopic() {
         return TopicBuilder.name("notification.requested").partitions(3).replicas(1).build();
+    }
+
+    @Bean
+    public NewTopic orderStatusUpdatedTopic() {
+        return TopicBuilder.name("order.status.updated").partitions(3).replicas(1).build();
     }
 }

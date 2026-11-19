@@ -5,12 +5,15 @@ C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service
 C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service\src\main\java\com\skbazaarhub\auth\entity\UserEntity.java
 C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service\src\main\java\com\skbazaarhub\auth\entity\CustomerEntity.java
 C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service\src\main\java\com\skbazaarhub\auth\entity\RoleEntity.java
+C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service\src\main\java\com\skbazaarhub\auth\service\EmailOtpService.java
 C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service\src\main\java\com\skbazaarhub\auth\security\JwtAuthenticationFilter.java
 C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service\src\main\java\com\skbazaarhub\auth\entity\OtpEntity.java
 C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service\src\main\java\com\skbazaarhub\auth\repository\RoleRepository.java
 C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service\src\main\java\com\skbazaarhub\auth\AuthServiceApplication.java
+C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service\src\main\java\com\skbazaarhub\auth\service\AadhaarVerificationService.java
 C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service\src\main\java\com\skbazaarhub\auth\controller\AuthController.java
 C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service\src\main\java\com\skbazaarhub\auth\repository\CustomerRepository.java
+C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service\src\main\java\com\skbazaarhub\auth\service\MobileOtpService.java
 C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service\src\main\java\com\skbazaarhub\auth\repository\UserRepository.java
 C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service\src\main\java\com\skbazaarhub\auth\repository\AddressRepository.java
 C:\Users\Sajid Khan\OneDrive\Documents\NetBeansProjects\SKBAAZARHUB\auth-service\src\main\java\com\skbazaarhub\auth\security\CustomUserDetailsService.java

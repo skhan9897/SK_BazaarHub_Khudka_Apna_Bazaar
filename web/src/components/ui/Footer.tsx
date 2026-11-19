@@ -69,7 +69,7 @@ export const Footer: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
-        <p>© 2026 SK BazaarHub Platform. Powered by Unified Microservices Architecture.</p>
+        <p>© 2026 SK BAZAARHUB • KHUDKA APNA BAZAAR • DEVELOPED BY SAJID KHAN. Powered by AWS Cloud & Kafka Microservices.</p>
         <div className="flex space-x-6 mt-4 md:mt-0">
           <a href="#" className="hover:text-gray-400">Privacy Policy</a>
           <a href="#" className="hover:text-gray-400">Terms of Service</a>

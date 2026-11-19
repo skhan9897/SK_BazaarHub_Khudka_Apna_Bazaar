@@ -26,6 +26,7 @@ com\skbazaarhub\common\events\InventoryUpdatedEvent.class
 com\skbazaarhub\common\exception\ResourceNotFoundException.class
 com\skbazaarhub\common\dto\PaymentVerificationDto.class
 com\skbazaarhub\common\dto\RefundRequestDto$RefundRequestDtoBuilder.class
+com\skbazaarhub\common\config\RedisConfig.class
 com\skbazaarhub\common\enums\NotificationType.class
 com\skbazaarhub\common\security\SecurityConstants.class
 com\skbazaarhub\common\config\KafkaConfig.class

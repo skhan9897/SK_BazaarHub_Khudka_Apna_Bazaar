@@ -1,6 +1,0 @@
-com\skbazaarhub\inventory\service\InventoryService.class
-com\skbazaarhub\inventory\entity\InventoryEntity$InventoryEntityBuilder.class
-com\skbazaarhub\inventory\entity\InventoryEntity.class
-com\skbazaarhub\inventory\repository\InventoryRepository.class
-com\skbazaarhub\inventory\InventoryServiceApplication.class
-com\skbazaarhub\inventory\controller\InventoryController.class

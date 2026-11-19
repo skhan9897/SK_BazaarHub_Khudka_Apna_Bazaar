@@ -83,8 +83,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="text-2xl font-extrabold tracking-tight text-surface-dark">
                 SK<span className="text-brand-500">Bazaar</span><span className="text-accent-500">Hub</span>
               </span>
-              <span className="block text-[10px] uppercase font-bold text-gray-400 tracking-widest -mt-1">
-                Multi-Vendor Commerce
+              <span className="block text-[9px] uppercase font-extrabold text-brand-600 tracking-wider -mt-1">
+                KHUDKA APNA BAZAAR • DEVELOPED BY SAJID KHAN
               </span>
             </div>
           </div>
