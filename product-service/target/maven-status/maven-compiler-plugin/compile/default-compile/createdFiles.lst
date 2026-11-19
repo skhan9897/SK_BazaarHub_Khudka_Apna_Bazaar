@@ -1,0 +1,17 @@
+com\skbazaarhub\product\entity\BrandEntity$BrandEntityBuilder.class
+com\skbazaarhub\product\ProductServiceApplication.class
+com\skbazaarhub\product\entity\CategoryEntity$CategoryEntityBuilder.class
+com\skbazaarhub\product\entity\ProductEntity.class
+com\skbazaarhub\product\entity\BrandEntity.class
+com\skbazaarhub\product\repository\ProductRepository.class
+com\skbazaarhub\product\entity\ProductVariantEntity.class
+com\skbazaarhub\product\entity\ProductEntity$ProductEntityBuilder.class
+com\skbazaarhub\product\service\CategoryService.class
+com\skbazaarhub\product\entity\CategoryEntity.class
+com\skbazaarhub\product\service\ProductService.class
+com\skbazaarhub\product\entity\ProductVariantEntity$ProductVariantEntityBuilder.class
+com\skbazaarhub\product\repository\CategoryRepository.class
+com\skbazaarhub\product\repository\BrandRepository.class
+com\skbazaarhub\product\repository\ProductVariantRepository.class
+com\skbazaarhub\product\controller\CategoryController.class
+com\skbazaarhub\product\controller\ProductController.class
