@@ -1,12 +1,6 @@
-FROM eclipse-temurin:21-jdk-alpine AS builder
+FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 ARG SERVICE_NAME
-COPY . .
-RUN ./mvnw clean package -pl ${SERVICE_NAME} -am -DskipTests
-
-FROM eclipse-temurin:21-jre-alpine
-WORKDIR /app
-ARG SERVICE_NAME
-COPY --from=builder /app/${SERVICE_NAME}/target/*.jar app.jar
+COPY ${SERVICE_NAME}/target/*-SNAPSHOT.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]

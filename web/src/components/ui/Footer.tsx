@@ -1,5 +1,3 @@
-package com.skbazaarhub.web.components.ui;
-
 import React from 'react';
 
 export const Footer: React.FC = () => {

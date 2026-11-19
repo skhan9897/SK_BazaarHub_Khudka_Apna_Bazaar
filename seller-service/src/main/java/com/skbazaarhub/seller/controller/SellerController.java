@@ -32,7 +32,7 @@ public class SellerController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ApiResponse<SellerEntity>> getSellerById(@PathVariable Long id) {
+    public ResponseEntity<ApiResponse<SellerEntity>> getSellerById(@PathVariable("id") Long id) {
         SellerEntity seller = sellerService.getSellerById(id);
         return ResponseEntity.ok(ApiResponse.success(seller));
     }
@@ -44,8 +44,8 @@ public class SellerController {
     }
 
     @PutMapping("/{id}/approve-kyc")
-    public ResponseEntity<ApiResponse<SellerEntity>> approveKyc(@PathVariable Long id,
-                                                                 @RequestParam String adminUsername) {
+    public ResponseEntity<ApiResponse<SellerEntity>> approveKyc(@PathVariable("id") Long id,
+                                                                 @RequestParam("adminUsername") String adminUsername) {
         SellerEntity seller = sellerService.approveKyc(id, adminUsername);
         return ResponseEntity.ok(ApiResponse.success(seller, "Seller KYC approved successfully"));
     }

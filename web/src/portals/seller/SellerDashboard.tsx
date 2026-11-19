@@ -1,13 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { api } from '../../api/client';
 
 export const SellerDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'overview' | 'products' | 'orders' | 'settlements'>('overview');
   const [showAddProductModal, setShowAddProductModal] = useState(false);
+  const [sellerProfile, setSellerProfile] = useState<any>(null);
 
   const [products, setProducts] = useState([
     { id: 101, name: "Sony WH-1000XM5 Headphones", price: 24990, stock: 45, status: "APPROVED" },
     { id: 104, name: "Bose SoundLink Flex Speaker", price: 12900, stock: 12, status: "APPROVED" }
   ]);
+
+  useEffect(() => {
+    api.getSellerProfile()
+      .then((res) => {
+        if (res.data && res.data.data) {
+          setSellerProfile(res.data.data);
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   const [newProductName, setNewProductName] = useState('');
   const [newProductPrice, setNewProductPrice] = useState('');

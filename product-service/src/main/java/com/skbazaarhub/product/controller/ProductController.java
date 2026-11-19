@@ -22,17 +22,17 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ApiResponse<ProductDto>> getProductById(@PathVariable Long id) {
+    public ResponseEntity<ApiResponse<ProductDto>> getProductById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(ApiResponse.success(productService.getProductById(id)));
     }
 
     @GetMapping("/search")
-    public ResponseEntity<ApiResponse<List<ProductDto>>> searchProducts(@RequestParam String q) {
+    public ResponseEntity<ApiResponse<List<ProductDto>>> searchProducts(@RequestParam("q") String q) {
         return ResponseEntity.ok(ApiResponse.success(productService.searchProducts(q)));
     }
 
     @GetMapping("/seller/{sellerId}")
-    public ResponseEntity<ApiResponse<List<ProductDto>>> getProductsBySeller(@PathVariable Long sellerId) {
+    public ResponseEntity<ApiResponse<List<ProductDto>>> getProductsBySeller(@PathVariable("sellerId") Long sellerId) {
         return ResponseEntity.ok(ApiResponse.success(productService.getProductsBySeller(sellerId)));
     }
 

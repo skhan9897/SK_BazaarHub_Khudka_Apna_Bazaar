@@ -1,0 +1,10 @@
+.git/
+.idea/
+web/node_modules/
+web/dist/
+android/.gradle/
+android/app/build/
+**/target/classes/
+**/target/generated-sources/
+**/target/maven-status/
+**/target/test-classes/

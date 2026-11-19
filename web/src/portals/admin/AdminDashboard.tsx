@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { api } from '../../api/client';
 
 export const AdminDashboard: React.FC = () => {
   const [kycRequests, setKycRequests] = useState([
     { id: 201, businessName: "Apex Retail Solutions", gstin: "27AAACA0000A1Z5", date: "Nov 19, 2026", status: "SUBMITTED" },
     { id: 202, businessName: "GreenSoul Comfort Ltd", gstin: "07AABCG1234F1Z8", date: "Nov 18, 2026", status: "APPROVED" }
   ]);
+  const [analytics, setAnalytics] = useState<any>(null);
+
+  useEffect(() => {
+    api.getAdminAnalytics()
+      .then((res) => {
+        if (res.data && res.data.data) {
+          setAnalytics(res.data.data);
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   const handleApproveKyc = (id: number) => {
     setKycRequests(

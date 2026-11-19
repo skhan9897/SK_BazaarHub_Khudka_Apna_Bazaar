@@ -15,17 +15,17 @@ public class InventoryController {
     private final InventoryService inventoryService;
 
     @GetMapping("/variant/{variantId}")
-    public ResponseEntity<ApiResponse<InventoryEntity>> getInventory(@PathVariable Long variantId) {
+    public ResponseEntity<ApiResponse<InventoryEntity>> getInventory(@PathVariable("variantId") Long variantId) {
         return ResponseEntity.ok(ApiResponse.success(inventoryService.getInventoryByVariantId(variantId)));
     }
 
     @PutMapping("/variant/{variantId}")
-    public ResponseEntity<ApiResponse<InventoryEntity>> updateStock(@PathVariable Long variantId, @RequestParam int stock) {
+    public ResponseEntity<ApiResponse<InventoryEntity>> updateStock(@PathVariable("variantId") Long variantId, @RequestParam("stock") int stock) {
         return ResponseEntity.ok(ApiResponse.success(inventoryService.updateStock(variantId, stock), "Stock updated successfully"));
     }
 
     @PostMapping("/reserve")
-    public ResponseEntity<ApiResponse<Boolean>> reserveStock(@RequestParam Long variantId, @RequestParam int quantity) {
+    public ResponseEntity<ApiResponse<Boolean>> reserveStock(@RequestParam("variantId") Long variantId, @RequestParam("quantity") int quantity) {
         boolean reserved = inventoryService.reserveStock(variantId, quantity);
         return ResponseEntity.ok(ApiResponse.success(reserved, "Stock reserved successfully"));
     }

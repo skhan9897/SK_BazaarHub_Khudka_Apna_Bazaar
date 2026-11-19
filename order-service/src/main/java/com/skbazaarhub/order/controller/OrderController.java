@@ -24,7 +24,7 @@ public class OrderController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ApiResponse<OrderDto>> getOrderById(@PathVariable Long id) {
+    public ResponseEntity<ApiResponse<OrderDto>> getOrderById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(ApiResponse.success(orderService.getOrderById(id)));
     }
 
@@ -34,7 +34,7 @@ public class OrderController {
     }
 
     @PutMapping("/{id}/status")
-    public ResponseEntity<ApiResponse<OrderDto>> updateOrderStatus(@PathVariable Long id, @RequestParam OrderStatus status) {
+    public ResponseEntity<ApiResponse<OrderDto>> updateOrderStatus(@PathVariable("id") Long id, @RequestParam("status") OrderStatus status) {
         return ResponseEntity.ok(ApiResponse.success(orderService.updateOrderStatus(id, status), "Order status updated"));
     }
 }

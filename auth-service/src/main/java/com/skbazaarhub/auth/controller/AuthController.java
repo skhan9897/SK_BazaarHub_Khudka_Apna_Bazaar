@@ -27,7 +27,7 @@ public class AuthController {
     }
 
     @PostMapping("/otp/send")
-    public ResponseEntity<ApiResponse<String>> sendOtp(@RequestParam String identifier) {
+    public ResponseEntity<ApiResponse<String>> sendOtp(@RequestParam("identifier") String identifier) {
         String message = authService.generateAndSendOtp(identifier);
         return ResponseEntity.ok(ApiResponse.success(message));
     }

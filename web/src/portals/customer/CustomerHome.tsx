@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ProductCard, ProductItem } from '../../components/ui/ProductCard';
+import { api } from '../../api/client';
 
 interface CustomerHomeProps {
   onAddToCart: (product: ProductItem) => void;
@@ -11,6 +12,33 @@ export const CustomerHome: React.FC<CustomerHomeProps> = ({
   onSelectProduct,
 }) => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [productsList, setProductsList] = useState<ProductItem[]>([]);
+
+  useEffect(() => {
+    api.getProducts()
+      .then((res) => {
+        if (res.data && res.data.data && Array.isArray(res.data.data) && res.data.data.length > 0) {
+          const apiProducts: ProductItem[] = res.data.data.map((p: any) => ({
+            id: p.id,
+            name: p.name,
+            basePrice: p.basePrice,
+            mrp: p.mrp,
+            mainImageUrl: p.mainImageUrl || "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
+            rating: p.rating || 4.5,
+            reviewCount: p.reviewCount || 10,
+            categoryName: p.categoryName || "General",
+            sellerBusinessName: p.sellerBusinessName || "Verified Seller",
+            isFlashSale: true
+          }));
+          setProductsList(apiProducts);
+        } else {
+          setProductsList(featuredProducts);
+        }
+      })
+      .catch(() => {
+        setProductsList(featuredProducts);
+      });
+  }, []);
 
   const heroBanners = [
     {
@@ -161,7 +189,7 @@ export const CustomerHome: React.FC<CustomerHomeProps> = ({
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {featuredProducts.map((product) => (
+          {productsList.map((product) => (
             <ProductCard
               key={product.id}
               product={product}
